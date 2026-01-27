@@ -68,13 +68,24 @@ Navigation between these sections is handled within the Home page without naviga
 - Optional text labels for colors
 - Works with touch and keyboard
 
-### 7. Limitations
-- Only supports 3x3 cubes
-- Works without internet
-- Designed for mobile and web use
+### 7. Color Palette 
+#1.Primary
+- Deep Blue 
+- White
+
+#2. Secondary
+- Emerald Green
+- Amber Yellow 
+
+#3. Neutral
+- Dark Gray
+- Light Gray 
+
+Cube Colors
+-White, Yellow, Red, Orange, Blue, Green
 
 ### 8. Future lmprovements
 - More solving options
 - Explanations for each move
-
 - Learning mode for beginners
+
