@@ -1,5 +1,5 @@
 # Rubik's Cube Solver App flow Document
-##1. Overview
+## 1. Overview
 The Rubik’s Cube Solver App helps users solve a standard 3×3 Rubik’s Cube by allowing them to input the cube’s current state and receive a clear, step-by-step solution. The app is designed for beginners and intermediate users who want guidance without prior solving knowledge.
 
 The application uses a three-page structure:
@@ -9,7 +9,7 @@ The application uses a three-page structure:
 
 NB.All solving-related functionality is contained within the Home page.
 
-##2. User Goals
+## 2. User Goals
 - Quickly input the current state of a Rubik’s Cube
 - Validate the cube configuration
 - Receive a correct, easy-to-follow solution
@@ -63,7 +63,7 @@ User can:
 
 NB. All steps above occur within the Home page using dynamic User Interface elements.
 
-##4. About Page Flow
+## 4. About Page Flow
 - User navigates to the About page
 
 Page provides:
@@ -71,7 +71,7 @@ Page provides:
 - Background and motivation of the developers
 - No functional interaction occurs on this page.
 
-##5. Guide Page Flow
+## 5. Guide Page Flow
 - User navigates to the Guide page
 
 Page provides:
@@ -79,7 +79,8 @@ Page provides:
 - Explanation of Rubik’s Cube concepts and move notation
 - This page is informational and supports learning.
 
-##6. Errors & Edge Cases
+## 6. Errors & Edge Cases
 - Incomplete cube input
 - Invalid cube configuration
 - Clear error messages with guidance are displayed
+
