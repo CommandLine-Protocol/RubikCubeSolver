@@ -41,7 +41,7 @@ NB. It allows one move per step and allows users to go back.
 
 Navigation between these sections is handled within the Home page without navigating to new pages.
 
-##3.2 About Page
+## 3.2 About Page
 - Content
 - Brief explanation of what a Rubik’s Cube is
 - Why Rubik’s Cubes are challenging and educational
@@ -69,15 +69,15 @@ Navigation between these sections is handled within the Home page without naviga
 - Works with touch and keyboard
 
 ### 7. Color Palette 
-#1.Primary
+# 1.Primary
 - Deep Blue 
 - White
 
-#2. Secondary
+# 2. Secondary
 - Emerald Green
 - Amber Yellow 
 
-#3. Neutral
+# 3. Neutral
 - Dark Gray
 - Light Gray 
 
@@ -88,4 +88,5 @@ Cube Colors
 - More solving options
 - Explanations for each move
 - Learning mode for beginners
+
 
