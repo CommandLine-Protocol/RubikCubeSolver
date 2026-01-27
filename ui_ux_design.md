@@ -12,28 +12,51 @@
 ### 3. App structure
 # The main screens are:
 1. Home
-2. Cube input
-3. Review
-4. solution
-5. Finish
+2. About
+3. Guide
+   
+## 3.1 Home Page
+The Home page serves as the primary functional page of the application, handling the full solving process.
+Within the Home screen, we will have:
 
-### 4. Screens overview
-## 4.1 Home screen
-It's main purpose is to start the app and it includes the app name, a brief explanation and the 'start solving' button.
+- Start Section
+- App name and brief description
+- Primary button: Start Solving
+- Cube Input 
+- Cube display (2D/3D)
+- Color selector with labels
+- Face-switch controls
+- Validation feedback
+- Review 
+- Full cube preview
+  
+The Buttons include:
+1) Edit Cube
+2) Solve Cube
 
-## 4.2  Cube Screen input
-The main purpose is to "Enter the cube's current state" thus includes the cube display(2D/ 3D), color selector, button that switch cube faces and progress indicator.
-NB. This prevents incorrect color input and to clearly show active face.
-
-## 4.3 Review screen
-The purpose of this screen is to confirm the cube setup before solving and it includes full cube preview and 'edit' and 'solve' buttons.
-
-## 4.4 Solution screen
-It's main purpose is show how to solve the cube step by step and it includes the step number, move instructions(eg R, U', F2), update cube visual and next and previous buttons.
+The Solution section
+- To show how to solve the cube step by step and it includes the step number, move instructions(eg R, U', F2), update cube visual and next and previous buttons.
 NB. It allows one move per step and allows users to go back.
+- A Solved cube image then appears and Success message appears and the user is given  an option to restart or input a new cube 
 
-## 4.5 Finish screen 
-It's main purpose is to end the solve process and it includes the solved cube image, success messsage and an option to start again.
+Navigation between these sections is handled within the Home page without navigating to new pages.
+
+##3.2 About Page
+- Content
+- Brief explanation of what a Rubik’s Cube is
+- Why Rubik’s Cubes are challenging and educational
+- Short introduction to the developers and the motivation behind the app
+
+## 3.3 Guide Page
+- Content
+- Using the Website
+- How to start solving
+- How to input cube colors correctly
+- How to navigate solution steps
+- Rubik’s Cube Concepts
+- Basic cube notation (R, L, U, D, F, B)
+- Explanation of clockwise and counter‑clockwise moves
+- Understanding step‑by‑step solutions
 
 ### 5. User Interaction
 - Buttons are clear and easy to tap 
@@ -53,4 +76,5 @@ It's main purpose is to end the solve process and it includes the solved cube im
 ### 8. Future lmprovements
 - More solving options
 - Explanations for each move
+
 - Learning mode for beginners
