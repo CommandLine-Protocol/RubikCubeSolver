@@ -15,8 +15,8 @@ NB.All solving-related functionality is contained within the Home page.
 - Receive a correct, easy-to-follow solution
 - Navigate solution steps at their own pace
 
-##3. Page-Based User Flow
-#3.1 Home Page Flow (Primary Flow)
+## 3. Page-Based User Flow
+# 3.1 Home Page Flow (Primary Flow)
 
 Step 1: Launch App
 -User opens the app on the Home page
@@ -63,7 +63,7 @@ User can:
 
 NB. All steps above occur within the Home page using dynamic User Interface elements.
 
-## 4. About Page Flow
+## 3.2 About Page Flow
 - User navigates to the About page
 
 Page provides:
@@ -71,7 +71,7 @@ Page provides:
 - Background and motivation of the developers
 - No functional interaction occurs on this page.
 
-## 5. Guide Page Flow
+## 3.3 Guide Page Flow
 - User navigates to the Guide page
 
 Page provides:
@@ -79,8 +79,9 @@ Page provides:
 - Explanation of Rubik’s Cube concepts and move notation
 - This page is informational and supports learning.
 
-## 6. Errors & Edge Cases
+## 4. Errors & Edge Cases
 - Incomplete cube input
 - Invalid cube configuration
 - Clear error messages with guidance are displayed
+
 
