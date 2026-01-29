@@ -153,8 +153,8 @@ NB. Invalid states trigger user-facing error messages.
 * Javascript-based cube-solving algorithm
 * Internal cube representaion using Arrays or objects
 
-#Visualization
-*2D or 3D cube rendering using Canvas
+# Visualization
+* 2D or 3D cube rendering using Canvas
 
 ### 9.2 Project File Structure
 ```
@@ -229,4 +229,5 @@ root/
 * Improved animation system
 * Modular solving engine for future cube sizes
 * Enhanced visual feedback during steps
+
 
