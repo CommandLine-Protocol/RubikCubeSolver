@@ -140,12 +140,62 @@ NB. Invalid states trigger user-facing error messages.
 
 ## 9. Development Considerations
 
-### 9.1 Technology Assumptions
+### 9.1 Technology Stack
+# Frontend
+* Frontend framework:React
+* JavaScript-
+* HTML and CSS
 
-* Frontend framework (e.g., React or similar)
-* JavaScript-based solving logic
-* Responsive layout for mobile and desktop
+# State Management
+* React state or Context API(lightweight state handlinh)
 
+# Solving Logic
+* Javascript-based cube-solving algorithm
+* Internal cube representaion using Arrays or objects
+
+#Visualization
+*2D or 3D cube rendering using Canvas
+
+### 9.2 Project File Structure
+```
+root/
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   │   ├── CubeInput.js
+│   │   ├── CubeReview.js
+│   │   ├── SolutionViewer.js
+│   │   ├── Completion.js
+│   │   └── Controls.js
+│   │
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── About.js
+│   │   └── Guide.js
+│   │
+│   ├── logic/
+│   │   ├── cubeModel.js
+│   │   ├── validator.js
+│   │   └── solver.js
+│   │
+│   ├── styles/
+│   │   └── main.css
+│   │
+│   ├── App.js
+│   └── index.js
+│
+├── package.json
+└── README.md
+```
+---
+### 9.3 Software Configuration
+* Environment configuration via *.env* files
+* Linting and formatting for code consistency
+* Responsive design configuration for mobile and desktop
+* Error logging via browser console during development
+---
 
 ## 10. Testing Strategy
 
@@ -153,9 +203,30 @@ NB. Invalid states trigger user-facing error messages.
 * Functional testing of solving steps
 * UI testing for navigation and interactions
 
+---
 
-## 11. Future Extensions (Design-Level Only)
+## 11. Deployment Strategy
+
+### Mode of Deployment
+
+* The application is deployed as a **static web application**
+* Built Frontend assets are served via a web hosting platform
+
+### Deployment Options
+* GitHub Pages
+* Netlify
+* Vercel
+
+### Deployment Process
+* Source code pushed to a version control repository
+* Automated build process generates production
+* Hosting platform serves the application over HTTPS
+ 
+---
+
+## 12. Future Extensions (Design-Level Only)
 
 * Improved animation system
 * Modular solving engine for future cube sizes
 * Enhanced visual feedback during steps
+
