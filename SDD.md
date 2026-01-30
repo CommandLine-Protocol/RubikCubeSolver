@@ -144,7 +144,7 @@ NB. Invalid states trigger user-facing error messages.
 
 # Frontend
 
-- Frontend framework:React
+- Frontend framework: Nextjs
 - JavaScript-
 - HTML and CSS
 
