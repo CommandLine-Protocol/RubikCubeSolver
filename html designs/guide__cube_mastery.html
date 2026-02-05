@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guide: Cube Mastery</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622", // Matching the dark scientist board vibe
+                        "surface-dark": "#192233",
+                        "border-dark": "#232f48",
+                        "text-secondary": "#92a4c9"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+<div class="min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-border-dark bg-[#111722]/90 backdrop-blur-md">
+<div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 lg:px-10">
+<div class="flex items-center gap-4 text-white">
+<div class="flex size-8 items-center justify-center rounded bg-primary/20 text-primary">
+<span class="material-symbols-outlined">deployed_code</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">Cube Mastery</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Solver</a>
+<a class="text-white text-sm font-bold border-b-2 border-primary py-5" href="#">Guide</a>
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Algorithms</a>
+<a class="text-text-secondary hover:text-white text-sm font-medium transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center justify-end gap-4">
+<button class="hidden sm:flex items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 text-white text-sm font-bold transition-all shadow-[0_0_15px_rgba(19,91,236,0.3)]">
+<span class="truncate">Initialize</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-1 flex justify-center py-8 px-4 md:px-8">
+<div class="flex flex-col max-w-[960px] w-full gap-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-sm">
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[10px] text-text-secondary">arrow_forward_ios</span>
+<a class="text-text-secondary hover:text-primary transition-colors" href="#">Guide</a>
+<span class="material-symbols-outlined text-[10px] text-text-secondary">arrow_forward_ios</span>
+<span class="text-white font-medium">Standard Notation</span>
+</div>
+<!-- Page Heading & Intro -->
+<div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between border-b border-border-dark pb-8">
+<div class="flex flex-col gap-4 max-w-2xl">
+<div class="inline-flex items-center gap-2 self-start rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+<span class="relative flex h-2 w-2">
+<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+</span>
+                            v1.0 Documentation
+                        </div>
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                            Operational Guide: <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-text-secondary">Standard Notation</span>
+</h1>
+<p class="text-text-secondary text-lg leading-relaxed max-w-xl font-body">
+                            Master the language of the cube. Before initiating the solver sequence, familiarize yourself with the standard rotational inputs to ensure accurate state synchronization.
+                        </p>
+</div>
+<!-- Decorative HUD Element -->
+<div class="hidden md:flex flex-col gap-2 p-4 rounded-lg bg-surface-dark border border-border-dark w-64">
+<div class="flex justify-between items-center text-xs text-text-secondary font-mono">
+<span>SYSTEM STATUS</span>
+<span class="text-green-400">ONLINE</span>
+</div>
+<div class="h-px w-full bg-border-dark"></div>
+<div class="grid grid-cols-2 gap-2 text-xs text-white font-mono">
+<div class="flex flex-col">
+<span class="text-text-secondary text-[10px]">MODULE</span>
+<span>NOTATION</span>
+</div>
+<div class="flex flex-col">
+<span class="text-text-secondary text-[10px]">VERSION</span>
+<span>1.4.2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Workflow / Onboarding Section -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">schema</span>
+<h2 class="text-xl font-bold text-white">Solver Protocol</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Step 1 -->
+<div class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-[#1e283d]">
+<div class="absolute right-4 top-4 text-6xl font-bold text-white/5 opacity-20 group-hover:opacity-100 group-hover:text-primary/10 transition-all">01</div>
+<div class="size-10 flex items-center justify-center rounded-lg bg-background-dark text-primary border border-border-dark shadow-inner">
+<span class="material-symbols-outlined">grid_on</span>
+</div>
+<div>
+<h3 class="text-white font-bold mb-1">Calibrate State</h3>
+<p class="text-text-secondary text-sm font-body leading-relaxed">Input your current cube configuration face-by-face using the color picker tool.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-[#1e283d]">
+<div class="absolute right-4 top-4 text-6xl font-bold text-white/5 opacity-20 group-hover:opacity-100 group-hover:text-primary/10 transition-all">02</div>
+<div class="size-10 flex items-center justify-center rounded-lg bg-background-dark text-primary border border-border-dark shadow-inner">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div>
+<h3 class="text-white font-bold mb-1">Compute Solution</h3>
+<p class="text-text-secondary text-sm font-body leading-relaxed">Allow the algorithm to process the permutation and generate the optimal path.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group relative flex flex-col gap-4 rounded-xl border border-border-dark bg-surface-dark p-6 transition-all hover:border-primary/50 hover:bg-[#1e283d]">
+<div class="absolute right-4 top-4 text-6xl font-bold text-white/5 opacity-20 group-hover:opacity-100 group-hover:text-primary/10 transition-all">03</div>
+<div class="size-10 flex items-center justify-center rounded-lg bg-background-dark text-primary border border-border-dark shadow-inner">
+<span class="material-symbols-outlined">play_circle</span>
+</div>
+<div>
+<h3 class="text-white font-bold mb-1">Execute Sequence</h3>
+<p class="text-text-secondary text-sm font-body leading-relaxed">Follow the interactive step-by-step player to physically solve your cube.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Notation Legend Section -->
+<section class="mt-4">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">rotate_right</span>
+<h2 class="text-xl font-bold text-white">Notation Legend</h2>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-xs font-mono text-text-secondary">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                            INTERACTIVE MODE: ACTIVE
+                        </div>
+</div>
+<!-- Notation Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Card R -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(19,91,236,0.15)]">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<!-- Diagram Area -->
+<div class="relative aspect-square w-full bg-[#111722] p-6 flex items-center justify-center overflow-hidden">
+<!-- Grid Background -->
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#324467 1px, transparent 1px); background-size: 10px 10px;"></div>
+<!-- Cube Placeholder with rotation indicator -->
+<div class="relative size-24 rounded bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl group-hover:scale-110 transition-transform duration-500 flex items-center justify-center border border-white/10" data-alt="3D cube diagram showing right face rotating clockwise">
+<span class="text-4xl font-black text-white/20 select-none">R</span>
+<!-- Arrow Overlay -->
+<div class="absolute -right-4 top-1/2 -translate-y-1/2 h-16 w-1 bg-primary rounded-full opacity-50 group-hover:opacity-100 group-hover:h-20 transition-all shadow-[0_0_10px_#135bec]"></div>
+<div class="absolute -right-6 top-0 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl">arrow_upward</span>
+</div>
+</div>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-2 p-4 border-t border-border-dark">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-white">R (Right)</h3>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">CW</span>
+</div>
+<p class="text-sm text-text-secondary font-body">Clockwise rotation of the right face, moving the front edge upwards.</p>
+</div>
+</div>
+<!-- Card L -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(19,91,236,0.15)]">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative aspect-square w-full bg-[#111722] p-6 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#324467 1px, transparent 1px); background-size: 10px 10px;"></div>
+<div class="relative size-24 rounded bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl group-hover:scale-110 transition-transform duration-500 flex items-center justify-center border border-white/10" data-alt="3D cube diagram showing left face rotating clockwise">
+<span class="text-4xl font-black text-white/20 select-none">L</span>
+<div class="absolute -left-4 top-1/2 -translate-y-1/2 h-16 w-1 bg-primary rounded-full opacity-50 group-hover:opacity-100 group-hover:h-20 transition-all shadow-[0_0_10px_#135bec]"></div>
+<div class="absolute -left-6 bottom-0 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl">arrow_downward</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 border-t border-border-dark">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-white">L (Left)</h3>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">CW</span>
+</div>
+<p class="text-sm text-text-secondary font-body">Clockwise rotation of the left face, moving the front edge downwards.</p>
+</div>
+</div>
+<!-- Card U -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(19,91,236,0.15)]">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative aspect-square w-full bg-[#111722] p-6 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#324467 1px, transparent 1px); background-size: 10px 10px;"></div>
+<div class="relative size-24 rounded bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl group-hover:scale-110 transition-transform duration-500 flex items-center justify-center border border-white/10" data-alt="3D cube diagram showing up face rotating clockwise">
+<span class="text-4xl font-black text-white/20 select-none">U</span>
+<div class="absolute left-1/2 -translate-x-1/2 -top-4 w-16 h-1 bg-primary rounded-full opacity-50 group-hover:opacity-100 group-hover:w-20 transition-all shadow-[0_0_10px_#135bec]"></div>
+<div class="absolute left-0 -top-6 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl rotate-90">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 border-t border-border-dark">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-white">U (Up)</h3>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">CW</span>
+</div>
+<p class="text-sm text-text-secondary font-body">Clockwise rotation of the top face, moving the front edge to the left.</p>
+</div>
+</div>
+<!-- Card D -->
+<div class="group relative flex flex-col overflow-hidden rounded-xl border border-border-dark bg-surface-dark transition-all hover:border-primary hover:shadow-[0_0_20px_rgba(19,91,236,0.15)]">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative aspect-square w-full bg-[#111722] p-6 flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#324467 1px, transparent 1px); background-size: 10px 10px;"></div>
+<div class="relative size-24 rounded bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl group-hover:scale-110 transition-transform duration-500 flex items-center justify-center border border-white/10" data-alt="3D cube diagram showing down face rotating clockwise">
+<span class="text-4xl font-black text-white/20 select-none">D</span>
+<div class="absolute left-1/2 -translate-x-1/2 -bottom-4 w-16 h-1 bg-primary rounded-full opacity-50 group-hover:opacity-100 group-hover:w-20 transition-all shadow-[0_0_10px_#135bec]"></div>
+<div class="absolute right-0 -bottom-6 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-3xl rotate-90">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 border-t border-border-dark">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold text-white">D (Down)</h3>
+<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">CW</span>
+</div>
+<p class="text-sm text-text-secondary font-body">Clockwise rotation of the bottom face, moving the front edge to the right.</p>
+</div>
+</div>
+</div>
+<!-- Prime Notation Alert -->
+<div class="mt-6 flex items-start gap-4 rounded-lg border border-primary/20 bg-primary/5 p-4">
+<span class="material-symbols-outlined text-primary mt-1">info</span>
+<div>
+<h4 class="text-base font-bold text-white mb-1">Inverted Rotations (Prime)</h4>
+<p class="text-sm text-text-secondary font-body">
+                                A move followed by an apostrophe (e.g., <code class="bg-[#111722] border border-border-dark px-1.5 py-0.5 rounded text-white font-mono">R'</code>) indicates a counter-clockwise rotation.
+                            </p>
+</div>
+</div>
+</section>
+<!-- Help Footer -->
+<div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-border-dark pt-8">
+<p class="text-text-secondary text-sm">Need more advanced techniques?</p>
+<div class="flex gap-4">
+<a class="flex items-center gap-2 text-white font-medium hover:text-primary transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg">school</span>
+                            View Algorithms
+                        </a>
+<a class="flex items-center gap-2 text-white font-medium hover:text-primary transition-colors text-sm" href="#">
+<span class="material-symbols-outlined text-lg">forum</span>
+                            Community Forum
+                        </a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

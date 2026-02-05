@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home: Start Solving</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-glow": "#135bec80",
+                        "secondary-glow": "#0bda5e80",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0a0a0f", // Deep charcoal/near-black
+                        "surface-dark": "#111722",
+                        "surface-border": "#232f48",
+                        "accent-neon": "#0bda5e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Space Grotesk", "monospace"], // Using Space Grotesk for mono feel as requested
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #232f48 1px, transparent 1px), linear-gradient(to bottom, #232f48 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Glitch/Tech Effects */
+        .tech-border {
+            position: relative;
+            border: 1px solid #232f48;
+        }
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #135bec;
+            border-left: 2px solid #135bec;
+        }
+        .tech-border::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2px solid #135bec;
+            border-right: 2px solid #135bec;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(19, 91, 236, 0.5);
+        }
+
+        .grid-bg {
+            background-size: 40px 40px;
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        }
+
+        /* Scanline animation */
+        @keyframes scanline {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(19, 91, 236, 0.05) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden transition-colors duration-200">
+<!-- Background Effects -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-grid-pattern opacity-[0.07] grid-bg"></div>
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background-dark via-transparent to-background-dark opacity-80"></div>
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-neon/5 rounded-full blur-[128px]"></div>
+</div>
+<div class="relative z-10 flex min-h-screen flex-col">
+<!-- Navigation -->
+<header class="w-full border-b border-surface-border bg-surface-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<div class="relative flex items-center justify-center size-8 bg-primary/20 rounded border border-primary text-primary">
+<span class="material-symbols-outlined text-xl">apps</span>
+</div>
+<span class="text-lg font-bold tracking-widest text-white">CUBE_<span class="text-primary">SOLVER</span></span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">HISTORY</a>
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">ALGORITHMS</a>
+<a class="text-sm font-medium text-slate-400 hover:text-white transition-colors" href="#">SETTINGS</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded border border-surface-border bg-background-dark/50">
+<div class="size-2 rounded-full bg-accent-neon animate-pulse"></div>
+<span class="text-xs text-slate-400 font-mono">SYSTEM: ONLINE</span>
+</div>
+<button class="text-slate-400 hover:text-white">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col">
+<!-- Hero Section -->
+<section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+<!-- Left Column: Content -->
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-4">
+<div class="inline-flex items-center gap-2 text-primary font-mono text-xs tracking-[0.2em] uppercase">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>Initialization Sequence // v.4.0.2</span>
+</div>
+<h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none tracking-tight text-white glow-text">
+                                    MASTER <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary">THE CUBE.</span>
+</h1>
+<p class="text-lg text-slate-400 max-w-lg leading-relaxed border-l-2 border-primary/30 pl-4">
+                                    Advanced solving algorithms at your fingertips. Input your state coordinates and receive the optimal solution path in milliseconds.
+                                </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 mt-2">
+<button class="group relative flex items-center justify-center h-14 px-8 bg-primary hover:bg-blue-600 text-white font-bold tracking-widest uppercase rounded overflow-hidden transition-all duration-300">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="relative z-10 flex items-center gap-3">
+                                        Start Solving 
+                                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</span>
+</button>
+<button class="flex items-center justify-center h-14 px-8 border border-surface-border bg-surface-dark/50 hover:bg-surface-border/50 text-slate-300 font-medium tracking-wide uppercase rounded transition-colors">
+                                    View Tutorial
+                                </button>
+</div>
+<!-- Mini Stats Dashboard -->
+<div class="grid grid-cols-3 gap-4 mt-8 p-4 bg-surface-dark/40 border border-surface-border rounded-lg backdrop-blur-sm">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 uppercase tracking-wider mb-1">Success Rate</span>
+<span class="text-xl font-bold text-white font-mono">99.8%</span>
+</div>
+<div class="flex flex-col border-l border-surface-border pl-4">
+<span class="text-xs text-slate-500 uppercase tracking-wider mb-1">Avg. Time</span>
+<span class="text-xl font-bold text-accent-neon font-mono">0.45s</span>
+</div>
+<div class="flex flex-col border-l border-surface-border pl-4">
+<span class="text-xs text-slate-500 uppercase tracking-wider mb-1">Users Active</span>
+<span class="text-xl font-bold text-white font-mono">14.2k</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual -->
+<div class="relative lg:h-[600px] flex items-center justify-center perspective-1000">
+<!-- HUD Elements around the cube -->
+<div class="absolute top-10 left-0 p-2 border border-surface-border bg-background-dark/80 rounded backdrop-blur text-xs font-mono text-primary animate-pulse">
+                                TARGET: [3, 3, 3]
+                            </div>
+<div class="absolute bottom-20 right-0 p-2 border border-surface-border bg-background-dark/80 rounded backdrop-blur text-xs font-mono text-accent-neon">
+                                STATUS: READY
+                            </div>
+<!-- Main Visual Container -->
+<div class="relative w-full aspect-square max-w-[500px] tech-border bg-surface-dark/30 rounded-xl overflow-hidden flex items-center justify-center group">
+<div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+<!-- Background Glow behind cube -->
+<div class="absolute w-64 h-64 bg-primary/20 blur-[80px] rounded-full"></div>
+<!-- Cube Image -->
+<div class="relative z-10 transform transition-transform duration-700 group-hover:scale-105 group-hover:rotate-3">
+<img alt="Glowing abstract Rubik's cube floating in dark space" class="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(19,91,236,0.5)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpxAZSrWfpuXC1gBfltL-Gb8Hkcm20evEzh6lCVPQ9OyvK4ncOBS4lM_e_pauDz-AkG3rbR7IbAyek0tNDTsGVOnHJNxdGA77FcbD9jjJPy2Sm2pSOpE870TF9CS3TR23nj3aakxsPRhIAO5cKAW5m0b-sM1hGlAPHNxjx3lo44fyoxWzwxgwz7epVZ_9qzgel-SFD5fevrGnOl4Si_bizex2hbAi_oBdqgARgZe9USSXp0DLs9BmoC8j-eLUOb_sWGu2x1VVp3Mel"/>
+</div>
+<!-- Scanning Line Effect -->
+<div class="scanline"></div>
+</div>
+<!-- Decorative connector lines -->
+<svg class="absolute top-1/2 left-0 -translate-x-full w-24 h-32 hidden lg:block text-surface-border" fill="none" stroke="currentColor">
+<path d="M100,50 L50,50 L20,100" stroke-width="1"></path>
+<circle cx="20" cy="100" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- Features / Data Stream -->
+<section class="border-t border-surface-border bg-surface-dark/30 py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-3xl font-bold text-white mb-2">SYSTEM CAPABILITIES</h2>
+<p class="text-slate-400">Analyzing module performance metrics...</p>
+</div>
+<div class="flex items-center gap-2 text-primary text-sm font-mono border border-primary/30 px-3 py-1 rounded bg-primary/5">
+<span class="material-symbols-outlined text-base animate-spin">sync</span>
+                            LIVE DATA FEED
+                        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group relative bg-background-dark border border-surface-border hover:border-primary/50 transition-colors p-6 rounded-lg overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">memory</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-primary/10 rounded text-primary">
+<span class="material-symbols-outlined">route</span>
+</div>
+<h3 class="text-lg font-bold text-white">Optimal Path</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4">
+                                Our proprietary engine calculates the shortest solution (God's Number) in milliseconds using Kociemba's algorithm.
+                            </p>
+<div class="w-full bg-surface-border h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-xs font-mono text-slate-500">
+<span>EFFICIENCY</span>
+<span>85%</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-background-dark border border-surface-border hover:border-accent-neon/50 transition-colors p-6 rounded-lg overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-accent-neon">visibility</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-accent-neon/10 rounded text-accent-neon">
+<span class="material-symbols-outlined">center_focus_strong</span>
+</div>
+<h3 class="text-lg font-bold text-white">Pattern Recognition</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4">
+                                Computer vision instantly identifies known algorithms from camera input, mapping the cube state to 3D space.
+                            </p>
+<div class="w-full bg-surface-border h-1 rounded-full overflow-hidden">
+<div class="bg-accent-neon h-full w-[92%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-xs font-mono text-slate-500">
+<span>ACCURACY</span>
+<span>99.9%</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-background-dark border border-surface-border hover:border-purple-500/50 transition-colors p-6 rounded-lg overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-purple-500">speed</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-purple-500/10 rounded text-purple-500">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="text-lg font-bold text-white">Speed Solve</h3>
+</div>
+<p class="text-slate-400 text-sm mb-4">
+                                Step-by-step visual guidance optimized for speed cubing. Learn to recognize cases faster.
+                            </p>
+<div class="w-full bg-surface-border h-1 rounded-full overflow-hidden">
+<div class="bg-purple-500 h-full w-[75%]"></div>
+</div>
+<div class="flex justify-between mt-2 text-xs font-mono text-slate-500">
+<span>LATENCY</span>
+<span>12ms</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="border-t border-surface-border bg-background-dark pt-12 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-2 mb-4">
+<div class="relative flex items-center justify-center size-6 bg-slate-800 rounded text-slate-400">
+<span class="material-symbols-outlined text-sm">apps</span>
+</div>
+<span class="text-white font-bold tracking-widest">CUBE_SOLVER</span>
+</div>
+<p class="text-slate-500 text-sm max-w-xs">
+                            Advanced robotics and algorithm visualization for cubing enthusiasts and professionals.
+                        </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Protocol</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Protocol</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Use</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">System Status</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Connect</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Contact Dev</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">GitHub Repo</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Discord Server</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-surface-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-600 text-xs font-mono">© 2024 CUBE SOLVER SYSTEMS. ALL SYSTEMS NOMINAL.</p>
+<div class="flex gap-4">
+<div class="h-2 w-2 rounded-full bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-slate-700"></div>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

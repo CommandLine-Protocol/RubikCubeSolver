@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home: Solved Success</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111722",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for the techy feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111722; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #232f48; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #324467; 
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(19, 91, 236, 0.5);
+        }
+        .tech-border {
+            position: relative;
+        }
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(45deg, rgba(19,91,236,0.5), transparent, rgba(19,91,236,0.5));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-[#232f48] bg-[#111722]/80 backdrop-blur-md">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined !text-3xl">deployed_code</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em] hidden sm:block">Solved Success</h2>
+</div>
+<div class="flex items-center gap-4 sm:gap-8">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-gray-400 hover:text-primary transition-colors text-sm font-medium" href="#">Solver</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm font-medium" href="#">Algorithms</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm font-medium" href="#">History</a>
+<a class="text-gray-400 hover:text-primary transition-colors text-sm font-medium" href="#">Settings</a>
+</nav>
+<button class="flex items-center justify-center gap-2 overflow-hidden rounded-lg h-9 px-4 bg-[#135bec] hover:bg-[#135bec]/90 text-white text-sm font-bold transition-all shadow-[0_0_15px_rgba(19,91,236,0.3)]">
+<span class="material-symbols-outlined !text-lg">wallet</span>
+<span class="hidden sm:inline">Connect Wallet</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col relative">
+<!-- Background Grid Effect -->
+<div class="absolute inset-0 grid-bg pointer-events-none z-0"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#111722] pointer-events-none z-0"></div>
+<div class="layout-container flex h-full grow flex-col z-10">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<!-- Hero Section -->
+<div class="@container mt-8 mb-12">
+<div class="flex flex-col gap-10 lg:flex-row items-center lg:items-start">
+<!-- 3D Cube Visual Placeholder -->
+<div class="relative w-full lg:w-1/2 aspect-square max-w-[500px] flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-[100px] animate-pulse-slow"></div>
+<!-- Tech Circle Decoration -->
+<div class="absolute inset-0 border border-primary/20 rounded-full scale-90 animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute inset-0 border border-dashed border-primary/30 rounded-full scale-75 animate-[spin_15s_linear_infinite_reverse]"></div>
+<!-- Image representing the 3D Cube -->
+<div class="relative z-10 w-3/4 h-3/4 bg-center bg-no-repeat bg-contain transition-transform duration-700 hover:scale-105" data-alt="Glowing 3D Rubik's Cube floating in dark space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDP8GNwl-RfPVNIFhpUP5mx5OzoBdUelvDRH0nfu-SHAsofBqbR876-2lViPCBS7smFUI2WU2yCkYEOKAwICNiXdjoKz-s7m_fpAQ7vqiUwE3DPHQGXVzv6pGiZoIeoHKZQutsGKMxV7ZZwLLMEasEj3vUx2EDes842HbDYPDo10UsJqFypMq1sx-s1YX1xnNsCNHb3-e1sCFPp5jMTxs3ZHml2A3eH04ZmWZfEen4-OCYiA4yfETAB8LctAoAn3a6FYpEZxtB-uL0U'); 
+                                            filter: drop-shadow(0 0 30px rgba(19,91,236,0.6));">
+</div>
+</div>
+<!-- Success Text & Actions -->
+<div class="flex flex-col gap-6 w-full lg:w-1/2 lg:pl-10 lg:pt-10">
+<div class="flex flex-col gap-2 text-left">
+<div class="flex items-center gap-2 text-primary font-mono text-sm tracking-widest mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                        SYSTEM READY
+                                    </div>
+<h1 class="text-white text-5xl sm:text-6xl font-black leading-tight tracking-[-0.033em] glow-text">
+                                        &gt; STATUS: SOLVED
+                                    </h1>
+<h2 class="text-gray-400 font-mono text-sm sm:text-base leading-relaxed max-w-lg mt-2 border-l-2 border-primary/50 pl-4">
+                                        Solution applied successfully. Structure stabilized. Entropy reduced to zero. Ready for next sequence input.
+                                    </h2>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6">
+<div class="tech-border bg-[#1a2332]/50 backdrop-blur-sm p-4 rounded-lg flex flex-col gap-1 hover:bg-[#1a2332]/80 transition-colors">
+<span class="text-gray-400 text-xs uppercase tracking-wider font-mono">Steps</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-bold text-white">21</span>
+<span class="text-xs text-primary">moves</span>
+</div>
+</div>
+<div class="tech-border bg-[#1a2332]/50 backdrop-blur-sm p-4 rounded-lg flex flex-col gap-1 hover:bg-[#1a2332]/80 transition-colors">
+<span class="text-gray-400 text-xs uppercase tracking-wider font-mono">Time</span>
+<div class="flex items-baseline gap-1">
+<span class="text-2xl font-bold text-white">0.04</span>
+<span class="text-xs text-primary">s</span>
+</div>
+</div>
+<div class="tech-border bg-[#1a2332]/50 backdrop-blur-sm p-4 rounded-lg flex flex-col gap-1 hover:bg-[#1a2332]/80 transition-colors col-span-2 sm:col-span-1">
+<span class="text-gray-400 text-xs uppercase tracking-wider font-mono">Algorithm</span>
+<span class="text-lg font-bold text-white truncate">Kociemba</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap gap-4">
+<button class="flex-1 min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 text-white text-base font-bold tracking-wide transition-all shadow-[0_0_20px_rgba(19,91,236,0.4)] hover:shadow-[0_0_30px_rgba(19,91,236,0.6)] group">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined group-hover:animate-bounce">add_circle</span>
+                                            [+] INPUT NEW CONFIG
+                                        </span>
+</button>
+<button class="flex-1 min-w-[200px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 border border-[#324467] bg-[#111722] hover:bg-[#1a2332] text-gray-300 hover:text-white text-base font-bold tracking-wide transition-all group">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined group-hover:rotate-180 transition-transform duration-500">refresh</span>
+                                            [R] RESTART SEQ
+                                        </span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Technical Details / Logs (Optional filler for layout balance) -->
+<div class="border-t border-[#232f48] pt-10 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="font-mono text-xs text-[#586c8a] flex flex-col gap-1">
+<p>LOG_ID: 8X92-A4</p>
+<p>SESSION_TIME: 00:12:45</p>
+<p>SERVER: US-EAST-1B</p>
+</div>
+<div class="flex gap-4">
+<div class="h-1 w-16 bg-[#232f48] rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3 animate-pulse"></div>
+</div>
+<div class="h-1 w-4 bg-[#232f48] rounded-full"></div>
+<div class="h-1 w-2 bg-[#232f48] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="border-t border-[#232f48] bg-[#0d121c] z-10">
+<div class="px-4 md:px-40 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex gap-6">
+<a class="text-[#586c8a] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">hub</span>
+</a>
+<a class="text-[#586c8a] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">terminal</span>
+</a>
+<a class="text-[#586c8a] hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">bug_report</span>
+</a>
+</div>
+<p class="text-[#586c8a] text-sm font-mono text-center md:text-right">
+                © 2024 Solved Success. <span class="text-primary">System Nominal.</span>
+</p>
+</div>
+</footer>
+</body></html>

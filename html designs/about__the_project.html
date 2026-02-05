@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Cube: Declassified</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-dark": "#192233",
+                        "border-dark": "#232f48",
+                        "accent-cyan": "#00f0ff",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #232f48 1px, transparent 1px), linear-gradient(to bottom, #232f48 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .grid-bg {
+            background-size: 40px 40px;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+            background-size: 100% 4px;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(19, 91, 236, 0.5);
+        }
+        .box-glow {
+            box-shadow: 0 0 20px rgba(19, 91, 236, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white">
+<!-- Top Navigation -->
+<div class="fixed top-0 left-0 right-0 z-50 border-b border-border-dark bg-background-dark/90 backdrop-blur-md">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary animate-pulse">terminal</span>
+<span class="text-sm tracking-[0.2em] font-bold text-white uppercase">Rubik_Solver_Terminal_v2.0</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-widest text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">INITIATION</a>
+<a class="hover:text-primary transition-colors text-white" href="#">PROJECT_ARCHIVE</a>
+<a class="hover:text-primary transition-colors" href="#">ALGORITHM</a>
+<a class="hover:text-primary transition-colors" href="#">PERSONNEL</a>
+</nav>
+<button class="hidden md:flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/50 rounded hover:bg-primary hover:text-white transition-all group">
+<span class="text-xs font-bold tracking-wider">LAUNCH_SIMULATION</span>
+<span class="material-symbols-outlined text-[16px] group-hover:rotate-90 transition-transform">rocket_launch</span>
+</button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Progress Bar (Fake Load) -->
+<div class="h-[1px] w-full bg-border-dark">
+<div class="h-full bg-primary w-2/3 shadow-[0_0_10px_#135bec]"></div>
+</div>
+</div>
+<!-- Main Content Wrapper -->
+<main class="flex-grow pt-16 relative">
+<!-- Background Grid Effect -->
+<div class="absolute inset-0 pointer-events-none opacity-20 grid-bg bg-grid-pattern z-0 h-[3000px]"></div>
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center justify-center py-20 px-6">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-dark/50 to-background-dark pointer-events-none"></div>
+<div class="max-w-5xl w-full z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 border border-primary/30 rounded-full bg-primary/10 text-primary text-xs font-mono tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        STATUS: CLASSIFIED
+                    </div>
+<h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter">
+                        PROJECT: <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-cyan text-glow">CUBE</span>
+</h1>
+<p class="text-lg md:text-xl text-slate-400 max-w-lg leading-relaxed border-l-2 border-primary/50 pl-6">
+                        Objective: Solve the unsolvable. A high-tech journey into the mathematics of chaos navigating a state space larger than the known universe.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary hover:bg-blue-600 text-white px-8 py-3 rounded text-sm font-bold tracking-widest transition-colors flex items-center gap-2 shadow-[0_0_20px_rgba(19,91,236,0.4)]">
+                            INITIATE_SEQUENCE
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="border border-slate-600 hover:border-white text-slate-300 hover:text-white px-8 py-3 rounded text-sm font-bold tracking-widest transition-colors">
+                            VIEW_DOCUMENTATION
+                        </button>
+</div>
+</div>
+<!-- Abstract 3D Cube Representation -->
+<div class="flex-1 relative w-full aspect-square max-w-[500px] flex items-center justify-center">
+<!-- Spinning circles/rings behind -->
+<div class="absolute inset-0 border border-slate-700/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+<div class="absolute inset-12 border border-primary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+<!-- Center Image -->
+<div class="relative w-64 h-64 bg-slate-800 rounded-lg border border-primary/50 box-glow overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-overlay" data-alt="Abstract Rubik's cube glowing grid wireframe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAhHqSfaK4JVNKi8uq6iq2EbEWpX5oQyLcUIvp5Zqlo56c7xmO6YxBTm-xDlMZFPbitjT3S6nI-fo7yoSsoAJkihLdzyFxxtLpghs81SYNUBIEXtoZj22uqZOuW2K8VaAnb226RAIcjP6IbgjeyQnsg6DjewDLNZnAVRke_AoubU6Gj3OHM-wLmcN1bHf06ard6fQIyM3LAq4t_rkVtvFORkNFdrxazv1ezwYn75R4SGmKY6ciBv6R7oEYtRpiAcpEI7avzJIHqw2A1')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+<!-- HUD Overlay on image -->
+<div class="absolute top-4 right-4 text-[10px] text-primary font-mono flex flex-col items-end">
+<span>ROT_X: 45.2</span>
+<span>ROT_Y: 12.8</span>
+<span>SOLVED: FALSE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section (The Data) -->
+<section class="py-12 border-y border-border-dark bg-surface-dark/30 backdrop-blur-sm">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 border border-border-dark bg-background-dark/50 rounded hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-xs uppercase tracking-wider">Permutations</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">apps</span>
+</div>
+<p class="text-3xl font-bold text-white mb-1">43 Quintillion</p>
+<p class="text-xs text-slate-400">Total possible configurations</p>
+</div>
+<div class="p-6 border border-border-dark bg-background-dark/50 rounded hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-xs uppercase tracking-wider">God's Number</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">functions</span>
+</div>
+<p class="text-3xl font-bold text-white mb-1">20 Moves</p>
+<p class="text-xs text-slate-400">Maximum moves for optimal solution</p>
+</div>
+<div class="p-6 border border-border-dark bg-background-dark/50 rounded hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-xs uppercase tracking-wider">Processing</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">speed</span>
+</div>
+<p class="text-3xl font-bold text-white mb-1">&lt; 0.05s</p>
+<p class="text-xs text-slate-400">Average solution calculation time</p>
+</div>
+<div class="p-6 border border-border-dark bg-background-dark/50 rounded hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<span class="text-slate-500 text-xs uppercase tracking-wider">Algorithm</span>
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">schema</span>
+</div>
+<p class="text-3xl font-bold text-white mb-1">Kociemba</p>
+<p class="text-xs text-slate-400">Two-phase optimal solver</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Mystery & Algorithm Section -->
+<section class="py-24 px-6 relative">
+<div class="max-w-5xl mx-auto space-y-24">
+<!-- Part 1: Mystery -->
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/2 relative group">
+<div class="absolute -inset-2 bg-gradient-to-r from-primary to-purple-600 rounded-lg opacity-20 group-hover:opacity-40 blur transition duration-500"></div>
+<div class="relative h-80 bg-surface-dark border border-border-dark rounded-lg overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" data-alt="Chaotic colorful particles representing data entropy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIC82MBRHo800t_r9WUeCpA1q-YfPEzmXwUSMUaES5G49MegWE00QJ59TRb2iZ45sGa7dnoO1E92YeDnyOD1GaXfJwB3Tycr5YGhzJKEEPH-UUb1V0tjpQn2cc1tUC5c-rjU28CydWDMtHMs9_uOroRMehQdBJpOJnI9HfBQLhenRVhTZ8otI-07Vyi__QX0CwTNhKutBhJwpjmtxSuX8PykeI22mdxqu3Dq1s1EeBT3FJIoogaSpVLC38vLGg0nTzxy7t8QxfORrH')"></div>
+<div class="z-10 bg-black/70 p-4 border border-white/10 backdrop-blur-md rounded max-w-xs text-center">
+<span class="material-symbols-outlined text-4xl text-white mb-2">grain</span>
+<p class="text-xs font-mono text-primary">ENTROPY_LEVEL: CRITICAL</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-6">
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-12 bg-primary"></div>
+<h2 class="text-sm font-bold tracking-widest text-primary uppercase">Chapter 01</h2>
+</div>
+<h3 class="text-3xl md:text-4xl font-bold text-white">The Mystery of Complexity</h3>
+<p class="text-slate-400 leading-relaxed">
+                            What appears to be a simple toy is actually a mathematical marvel. Analyzing the complexity of the cube through a chaotic data cloud reveals a state space so vast, it challenges the limits of human comprehension.
+                        </p>
+<ul class="space-y-3 pt-4">
+<li class="flex items-start gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Navigating permutations via Group Theory</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span>Understanding the "Devil's Algorithm"</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Part 2: Algorithm -->
+<div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+<div class="w-full md:w-1/2 relative group">
+<div class="absolute -inset-2 bg-gradient-to-l from-primary to-accent-cyan rounded-lg opacity-20 group-hover:opacity-40 blur transition duration-500"></div>
+<div class="relative h-80 bg-surface-dark border border-border-dark rounded-lg overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" data-alt="Computer chip macro shot representing processing power" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO1bFK-l1Gp3aBRg41Seem4VlarcNrt2breLHJGYU_JvdN-8efIxZzmhksDH6DBpgKvrqdjSEJrW7HSAqxchIq47tFoV_f12ItHl_aMLQBiRlC058Gqtgm8CRrmIQ_k7PxN1_1rAAkjeOxQ75sQ2VtKwbeDGRMhVLMCH2-LpqnkqJ4EgOmaxvduFRwsglYcMzddMFp_WUCe8oeNvBGbrz2jiLdEQOpY82iPQzpJDxox6mcb-fcPv0qs_fZ3M4nM2RgKiIT64zjJjyG')"></div>
+<!-- Overlay Chart UI -->
+<div class="absolute inset-0 p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="text-[10px] font-mono text-primary bg-black/50 px-2 py-1 rounded border border-primary/30">
+                                         ALGORITHM_VISUALIZER.EXE
+                                     </div>
+<div class="flex gap-1">
+<div class="w-2 h-2 rounded-full bg-red-500"></div>
+<div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4 animate-[pulse_2s_infinite]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-mono text-slate-300">
+<span>PHASE_1: REDUCTION</span>
+<span>75% COMPLETE</span>
+</div>
+<div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-accent-cyan w-1/4"></div>
+</div>
+<div class="flex justify-between text-[10px] font-mono text-slate-300">
+<span>PHASE_2: OPTIMIZATION</span>
+<span>PENDING...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 space-y-6">
+<div class="flex items-center gap-4">
+<div class="h-[1px] w-12 bg-primary"></div>
+<h2 class="text-sm font-bold tracking-widest text-primary uppercase">Chapter 02</h2>
+</div>
+<h3 class="text-3xl md:text-4xl font-bold text-white">The Kociemba Method</h3>
+<p class="text-slate-400 leading-relaxed">
+                            Our solver utilizes Herbert Kociemba's two-phase algorithm. It first reduces the cube to a state solvable by only a subset of moves (Phase 1), then solves the rest (Phase 2), drastically reducing the search space.
+                        </p>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="p-4 rounded bg-surface-dark border border-border-dark">
+<h4 class="text-white font-bold mb-1">Phase 1</h4>
+<p class="text-xs text-slate-400">Orientation &amp; E-slice placement</p>
+</div>
+<div class="p-4 rounded bg-surface-dark border border-border-dark">
+<h4 class="text-white font-bold mb-1">Phase 2</h4>
+<p class="text-xs text-slate-400">Permutation &amp; Restoration</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Personnel / Dossier Section -->
+<section class="py-20 bg-surface-dark relative overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[300px] text-white rotate-12">folder_open</span>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 relative z-10">
+<div class="mb-12 text-center">
+<h2 class="text-3xl font-bold text-white mb-4 tracking-tight">PERSONNEL_DOSSIER</h2>
+<p class="text-slate-400 max-w-xl mx-auto">Clearance Level 5 Authorized Personnel Only. The minds behind the machine.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Profile Card 1 -->
+<div class="bg-background-dark border border-border-dark p-1 rounded-lg hover:border-primary transition-all group hover:-translate-y-1">
+<div class="flex flex-col h-full bg-[#0d121c] p-6 rounded relative overflow-hidden">
+<!-- Holographic overlay effect on hover -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/5 to-primary/0 translate-y-[-100%] group-hover:translate-y-[100%] transition-transform duration-1000 pointer-events-none"></div>
+<div class="flex items-start gap-4 mb-6">
+<div class="w-20 h-20 bg-slate-700 rounded overflow-hidden grayscale group-hover:grayscale-0 transition-all border-2 border-slate-600 group-hover:border-primary">
+<div class="w-full h-full bg-cover bg-center" data-alt="Portrait of lead developer in casual wear" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5Y4E9SdFXPGSDmcxDSJiQNKymES-nj9-Ea508i6e8oCX9ZxnLx_AqHBfbawDWdwWvyhnhF6ELTxD5-IAv6VMgFrFsAdgQEE1PAOLyHGPuTy5tWXI_PgdNQABHUKAhd4zCLbpIiHm55C7nV72jgxNPmia16pIRQF8Csahg_SYEhSzFswVvBd7gBa35F2uPZ0hWjKXITxjV3kRqdfUl8bOO9EafSlSEzczfYJpmXf0858MFCRvyQJ_ftF_F9tNXoJXRSCLPH51R6OFV')"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-white font-bold text-lg truncate">Dr. A. Vance</h3>
+<p class="text-primary text-xs font-mono mb-2">LEAD_ARCHITECT</p>
+<div class="h-[1px] bg-slate-700 w-full mb-2"></div>
+<p class="text-[10px] text-slate-500 font-mono">ID: 8492-AX</p>
+</div>
+</div>
+<div class="mt-auto space-y-3">
+<div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+<span class="text-slate-500">SPECIALIZATION</span>
+<span class="text-slate-300">Group Theory</span>
+</div>
+<div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+<span class="text-slate-500">ASSIGNMENT</span>
+<span class="text-slate-300">Core Engine</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Card 2 -->
+<div class="bg-background-dark border border-border-dark p-1 rounded-lg hover:border-primary transition-all group hover:-translate-y-1">
+<div class="flex flex-col h-full bg-[#0d121c] p-6 rounded relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/5 to-primary/0 translate-y-[-100%] group-hover:translate-y-[100%] transition-transform duration-1000 pointer-events-none"></div>
+<div class="flex items-start gap-4 mb-6">
+<div class="w-20 h-20 bg-slate-700 rounded overflow-hidden grayscale group-hover:grayscale-0 transition-all border-2 border-slate-600 group-hover:border-primary">
+<div class="w-full h-full bg-cover bg-center" data-alt="Portrait of female UI designer" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAj25hSSLgY2GCI73lTm1lXF7InPF46FzDU08G3NwM6HwO-fDY2-VjTXKcfDCq83UJ-yMMNxNburHfQ6H-cn8ue263QgiTftwWj5UDYJsvQuvPq0aDaMYllWTR2MuZenHm2nfbvoqrNJvXZd9NFy2IB0GKqn5kL4MiwpN5UMDeVZk6DL_gA6_YeMv_ZKXvfHxOW90N7tgK_x_6esPlUMtSVyUKtgdpaendVM_VWpFv9ZdghqHvbQBSAyVlaGmrDt09SCojFEPFu3eI1')"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-white font-bold text-lg truncate">S. Kaji</h3>
+<p class="text-primary text-xs font-mono mb-2">INTERFACE_OPS</p>
+<div class="h-[1px] bg-slate-700 w-full mb-2"></div>
+<p class="text-[10px] text-slate-500 font-mono">ID: 9921-BZ</p>
+</div>
+</div>
+<div class="mt-auto space-y-3">
+<div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+<span class="text-slate-500">SPECIALIZATION</span>
+<span class="text-slate-300">WebGL / 3D</span>
+</div>
+<div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+<span class="text-slate-500">ASSIGNMENT</span>
+<span class="text-slate-300">Visualizer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Card 3 -->
+<div class="bg-background-dark border border-border-dark p-1 rounded-lg hover:border-primary transition-all group hover:-translate-y-1">
+<div class="flex flex-col h-full bg-[#0d121c] p-6 rounded relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-b from-primary/0 via-primary/5 to-primary/0 translate-y-[-100%] group-hover:translate-y-[100%] transition-transform duration-1000 pointer-events-none"></div>
+<div class="flex items-start gap-4 mb-6">
+<div class="w-20 h-20 bg-slate-700 rounded overflow-hidden grayscale group-hover:grayscale-0 transition-all border-2 border-slate-600 group-hover:border-primary">
+<div class="w-full h-full bg-cover bg-center" data-alt="Portrait of male data scientist" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ1TzYpj2KNwqhmr0D0_rc3lxlrNPQoDNGnubQbVY_AwoN8OdQYd3epjJ2mpyadPkL70p3UNGLR2LNGsxgH51j371_AZ0-Gb6cNzwsfXCX303LciuqpKKKrKNra2zRIQ3l7BSQXPfCfuSCY7riQc0ImSoxomTPQWgryfmfDKT-Q2IsPwyxlosrWYBVe9dZV0FGaW9n4_WfXHZEmqG8hKoR8950YbJ2avyDiZxHehXi3NdC1Hq9IBxi2WSxekPDgbZrb4kOZ3WTlrDS')"></div>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-white font-bold text-lg truncate">M. Rossi</h3>
+<p class="text-primary text-xs font-mono mb-2">CRYPTOGRAPHY</p>
+<div class="h-[1px] bg-slate-700 w-full mb-2"></div>
+<p class="text-[10px] text-slate-500 font-mono">ID: 1102-CX</p>
+</div>
+</div>
+<div class="mt-auto space-y-3">
+<div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+<span class="text-slate-500">SPECIALIZATION</span>
+<span class="text-slate-300">Algorithms</span>
+</div>
+<div class="flex justify-between text-xs border-b border-slate-800 pb-2">
+<span class="text-slate-500">ASSIGNMENT</span>
+<span class="text-slate-300">Security</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- System Footer -->
+<footer class="border-t border-border-dark bg-background-dark py-8 px-6 mt-auto">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-xs font-mono text-slate-400">SYSTEM STATUS: ONLINE // SERVER_LOAD: 12%</span>
+</div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-white transition-colors" href="#">
+<span class="sr-only">GitHub</span>
+<span class="material-symbols-outlined text-sm">code</span>
+</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">
+<span class="sr-only">Twitter</span>
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#">
+<span class="sr-only">Discord</span>
+<span class="material-symbols-outlined text-sm">forum</span>
+</a>
+</div>
+<div class="text-xs text-slate-600 font-mono text-right">
+<p>© 2024 PROJECT CUBE INC.</p>
+<p>ALL RIGHTS RESERVED // V.2.1.4</p>
+</div>
+</div>
+</footer>
+</main>
+</body></html>
